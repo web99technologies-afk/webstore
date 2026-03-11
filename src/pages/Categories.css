@@ -1,0 +1,34 @@
+.categories-page {
+    padding: 4rem 1.5rem;
+}
+
+.categories-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.categories-grid {
+    margin-bottom: 4rem;
+}
+
+.category-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-info {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border: 1px solid var(--border-color);
+    border-top: none;
+    color: var(--text-light);
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Adjust category card inside wrap so bottom corners are not double-rounded */
+.category-wrap .category-card {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}

@@ -1,0 +1,16 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 5rem;
+  /* For fixed navbar */
+}
+
+/* Page Transitions */
+.page-transition {
+  animation: fadeIn 0.4s ease-out;
+}

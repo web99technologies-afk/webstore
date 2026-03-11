@@ -1,0 +1,213 @@
+.youtube-section {
+    padding: 5rem 0;
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    position: relative;
+}
+
+.youtube-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.yt-title-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.youtube-header .section-title {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.youtube-header .section-title span {
+    color: #FF0000;
+}
+
+.yt-sub-btn {
+    background-color: #FF0000;
+    box-shadow: 0 4px 6px -1px rgba(255, 0, 0, 0.3);
+}
+
+.yt-sub-btn:hover {
+    background-color: #cc0000;
+    box-shadow: 0 10px 15px -3px rgba(255, 0, 0, 0.4);
+}
+
+.yt-slider-wrap {
+    position: relative;
+}
+
+.yt-swiper {
+    padding-bottom: 3rem;
+}
+
+.yt-swiper .swiper-pagination-bullet {
+    background: var(--text-light);
+    opacity: 0.5;
+}
+
+.yt-swiper .swiper-pagination-bullet-active {
+    background: #FF0000;
+    opacity: 1;
+}
+
+.yt-video-card {
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.yt-video-card:hover {
+    transform: translateY(-5px);
+}
+
+.yt-thumbnail-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+.yt-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.yt-video-card:hover .yt-thumbnail {
+    transform: scale(1.05);
+}
+
+.yt-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.yt-video-card:hover .yt-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.yt-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.yt-play-btn svg {
+    margin-left: 4px;
+    /* Optically center the play icon */
+}
+
+.yt-video-card:hover .yt-play-btn {
+    transform: translate(-50%, -50%) scale(1.1);
+    background-color: #FF0000;
+}
+
+.yt-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    z-index: 10;
+}
+
+.yt-info {
+    padding: 1rem 0;
+}
+
+.yt-video-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.yt-channel-name {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+/* Modal Specific Styles */
+.yt-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.yt-modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background: #000;
+    border-radius: var(--radius-md);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+}
+
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.yt-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.yt-close-btn:hover {
+    color: #FF0000;
+}
+
+@media (min-width: 768px) {
+    .yt-close-btn {
+        top: -50px;
+        right: -50px;
+    }
+}
