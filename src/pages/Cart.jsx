@@ -112,9 +112,9 @@ const Cart = () => {
                             <span>₹{grandTotal.toLocaleString('en-IN')}</span>
                         </div>
 
-                        <button className="btn btn-primary btn-checkout">
+                        <Link to="/checkout" className="btn btn-primary btn-checkout">
                             Proceed to Checkout <ArrowRight size={20} />
-                        </button>
+                        </Link>
                         <div className="checkout-note">
                             Currently serving Kumbakonam and surrounding areas only.
                         </div>

@@ -8,6 +8,7 @@ import Categories from './pages/Categories';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 import QuickContact from './components/QuickContact';
 import { CartProvider } from './context/CartContext';
 import './App.css';
@@ -26,6 +27,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </main>
           <Footer />
