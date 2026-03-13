@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone, MessageCircle, MonitorPlay, Wifi, Cast, Smartphone } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { useUI } from '../context/UIContext';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -46,10 +47,11 @@ const getFeatures = (category) => {
 
 const TVSection = () => {
     const [activeTab, setActiveTab] = useState('Android TV');
+    const { openContactPopup } = useUI();
 
     const sendMessage = (tv, cat) => {
         const message = `Hello Om Muruga Enterprises! I am interested in the ${tv.size} Inch ${cat} with price range ${tv.range}. Please share more details.`;
-        window.open(`https://wa.me/918525928699?text=${encodeURIComponent(message)}`, '_blank');
+        window.open(`https://wa.me/918807634136?text=${encodeURIComponent(message)}`, '_blank');
     };
 
     return (
@@ -112,9 +114,9 @@ const TVSection = () => {
                                         </ul>
 
                                         <div className="tv-actions">
-                                            <a href="tel:+918525928699" className="btn btn-call">
+                                            <button onClick={openContactPopup} className="btn btn-call">
                                                 <Phone size={18} /> Call Now
-                                            </a>
+                                            </button>
                                             <button onClick={() => sendMessage(tv, activeTab)} className="btn btn-wa">
                                                 <MessageCircle size={18} /> WhatsApp
                                             </button>

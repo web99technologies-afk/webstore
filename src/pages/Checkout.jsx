@@ -42,7 +42,7 @@ const Checkout = () => {
         e.preventDefault();
         
         // WhatsApp Configuration
-        const WHATSAPP_NUMBER = '918525928699';
+        const WHATSAPP_NUMBER = '918807634136';
         
         // Format Order Summary
         let orderMessage = `*Customer Order - Om Muruga Enterprises*\n\n`;

@@ -10,30 +10,43 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import QuickContact from './components/QuickContact';
+import ContactPopup from './components/ContactPopup';
 import { CartProvider } from './context/CartContext';
+import { UIProvider, useUI } from './context/UIContext';
 import './App.css';
+
+const AppContent = () => {
+  const { isContactPopupOpen, closeContactPopup } = useUI();
+  
+  return (
+    <Router>
+      <div className="app-container">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </main>
+        <Footer />
+        <QuickContact />
+        <ContactPopup isOpen={isContactPopupOpen} onClose={closeContactPopup} />
+      </div>
+    </Router>
+  );
+};
 
 function App() {
   return (
     <CartProvider>
-      <Router>
-        <div className="app-container">
-          <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-            </Routes>
-          </main>
-          <Footer />
-          <QuickContact />
-        </div>
-      </Router>
+      <UIProvider>
+        <AppContent />
+      </UIProvider>
     </CartProvider>
   );
 }

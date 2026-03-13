@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Youtube, MessageCircle } from 'lucide-react';
+import { useUI } from '../context/UIContext';
 import './Footer.css';
 
 const Footer = () => {
+    const { openContactPopup } = useUI();
+
     return (
         <footer className="footer animate-fade-in">
             <div className="container footer-container">
@@ -17,8 +20,8 @@ const Footer = () => {
                     <div className="social-links">
                         <a href="https://www.instagram.com/ommurugaenterprises/?hl=en" target="_blank" rel="noopener noreferrer" className="social-icon" title="Instagram"><Instagram size={20} /></a>
                         <a href="https://www.youtube.com/@ommurugaenterprises4150/videos" target="_blank" rel="noopener noreferrer" className="social-icon" title="YouTube"><Youtube size={20} /></a>
-                        <a href="tel:+918525928699" className="social-icon" title="Call Us"><Phone size={20} /></a>
-                        <a href="https://wa.me/918525928699" target="_blank" rel="noopener noreferrer" className="social-icon" title="WhatsApp"><MessageCircle size={20} /></a>
+                        <button onClick={openContactPopup} className="social-icon" title="Call Us"><Phone size={20} /></button>
+                        <a href="https://wa.me/918807634136" target="_blank" rel="noopener noreferrer" className="social-icon" title="WhatsApp"><MessageCircle size={20} /></a>
                     </div>
                 </div>
 
@@ -51,9 +54,9 @@ const Footer = () => {
                             <MapPin size={20} className="icon" />
                             <span>ROSI COMPLEX, Chennai Road, Malik Nagar, Koranattu Karuppur I, Kumbakonam, Tamil Nadu 612002, India</span>
                         </li>
-                        <li>
+                        <li className="clickable-contact" onClick={openContactPopup}>
                             <Phone size={20} className="icon" />
-                            <span>+91 85259 28699</span>
+                            <span>+91 88076 34136</span>
                         </li>
                         <li>
                             <Mail size={20} className="icon" />

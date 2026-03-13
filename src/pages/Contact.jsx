@@ -1,8 +1,11 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { useUI } from '../context/UIContext';
 import './Contact.css';
 
 const Contact = () => {
+    const { openContactPopup } = useUI();
+
     return (
         <div className="contact-page page-transition container">
             <div className="contact-header animate-slide-up">
@@ -20,11 +23,12 @@ const Contact = () => {
                         <p className="contact-detail">Tamil Nadu 612002, India</p>
                     </div>
 
-                    <div className="contact-card">
+                    <div className="contact-card clickable-card" onClick={openContactPopup}>
                         <div className="contact-icon"><Phone size={24} /></div>
                         <h3>Call Us</h3>
-                        <p className="contact-detail">+91 85259 28699</p>
+                        <p className="contact-detail">+91 88076 34136</p>
                         <p className="contact-subdetail">Mon-Sat from 9am to 9pm.</p>
+                        <button className="btn-card-action">View Contacts</button>
                     </div>
 
                     <div className="contact-card">
@@ -62,7 +66,7 @@ const Contact = () => {
                         </form>
                         <div className="whatsapp-action">
                             <p>Prefer to chat? Reach us on WhatsApp</p>
-                            <a href="https://wa.me/918525928699" target="_blank" rel="noreferrer" className="btn btn-whatsapp">
+                            <a href="https://wa.me/918807634136" target="_blank" rel="noreferrer" className="btn btn-whatsapp">
                                 <MessageCircle size={20} /> Chat on WhatsApp
                             </a>
                         </div>

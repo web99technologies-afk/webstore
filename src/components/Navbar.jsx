@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, Search, Phone } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useUI } from '../context/UIContext';
 import './Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
     const { getCartCount } = useCart();
+    const { openContactPopup } = useUI();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -40,9 +42,9 @@ const Navbar = () => {
                 </ul>
 
                 <div className="nav-actions">
-                    <a href="tel:+918525928699" className="action-icon phone-icon hidden-mobile" title="Call Us">
+                    <button onClick={openContactPopup} className="action-icon phone-icon hidden-mobile" title="Call Us">
                         <Phone size={24} />
-                    </a>
+                    </button>
                     <Link to="/cart" className="action-icon cart-icon">
                         <ShoppingCart size={24} />
                         {getCartCount() > 0 && <span className="cart-badge">{getCartCount()}</span>}

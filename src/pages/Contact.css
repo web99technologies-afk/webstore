@@ -40,6 +40,27 @@
     border-color: var(--primary-color);
 }
 
+.clickable-card {
+    cursor: pointer;
+}
+
+.btn-card-action {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable-card:hover .btn-card-action {
+    background: var(--primary-color);
+    color: white;
+}
+
 .contact-icon {
     width: 64px;
     height: 64px;
